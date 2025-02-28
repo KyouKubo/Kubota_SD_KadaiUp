@@ -69,10 +69,10 @@ const onReturn = () => {
   router.push(`/trainer`);
 }
 
-const onDebug = () => {
-  console.log("debug On");
-  console.log(trainer);
-}
+// const onDebug = () => {
+//   console.log("debug On");
+//   console.log(trainer);
+// }
 
 </script>
 
@@ -83,7 +83,7 @@ const onDebug = () => {
       <img src="/avatar.png" />
       <span>{{ trainer.name }}</span>
     </div>
-    <button @click="onDebug">デバッグ</button>
+    <!-- <button @click="onDebug">デバッグ</button> -->
 
     <GamifyButton class="spaced-button" @click="onReturn"
       >トレーナー選択画面に戻る</GamifyButton
