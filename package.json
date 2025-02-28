@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.735.0",
+    "@marp-team/marp-cli": "^4.1.1",
+    "@nuxt/eslint": "^0.7.5",
+    "@smithy/node-http-handler": "^4.0.2",
+    "animate.css": "^4.1.1",
+    "cors": "^2.8.5",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "npm-check-updates": "^17.1.14",
+    "npm-run-all2": "^7.0.2",
+    "nuxt": "^3.15.3",
+    "ofetch": "^1.4.1",
+    "prettier": "^3.4.2",
+    "proxy-agent": "^6.5.0",
+    "tsup": "^8.3.6"
+  },
+  "packageManager": "npm@11.0.0",
+  "private": true,
+  "engines": {
+    "node": "^18 || ^20 || ^22"
+  },
+  "scripts": {
+    "build": "nuxi build",
+    "build:express": "tsup express.js",
+    "build:prepare": "nuxi prepare",
+    "dev": "nuxi dev",
+    "dev:express": "npm-run-all build:{prepare,express} --parallel dev start:express",
+    "format": "prettier --write .",
+    "lint": "eslint --fix .",
+    "slide": "marp -s docs",
+    "start": "node .output/server/index.mjs",
+    "start:express": "dotenv -e .env -- node .tsup-output/express.js",
+    "update": "npm-check-updates --deep --upgrade && npm dedupe"
+  }
+}
